@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackbarComponent } from 'src/app/modules/shared/components/snackbar/snackbar.component';
 import { GetService } from 'src/app/modules/shared/services/get.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-all-product',
   templateUrl: './all-product.component.html',
@@ -30,7 +31,11 @@ export class AllProductComponent implements OnInit {
       this.SetToCart = JSON.parse(localStorage.getItem('__cart')!);
       let exit = this.SetToCart.find(id => id.item.id == event.item.id)
       if (exit) {
-        alert('already Selected')
+        Swal.fire(
+          'You Already Selected!',
+          'Continue Shopping',
+          'success'
+        )
       } else {
         this.SetToCart.push(event);
         localStorage.setItem('__cart', JSON.stringify(this.SetToCart))

@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GetService } from 'src/app/modules/shared/services/get.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-product-detail',
@@ -38,7 +39,11 @@ addToCart(prod:any)
     let exit = this.setToCart.find(id => id.item.id == prod.id)
     if(exit)
     {
-      alert('Already Selected')
+      Swal.fire(
+        'You Already Selected!',
+        'Continue Shopping',
+        'success'
+      )
     }else
     {
       this.setToCart.push({
@@ -67,7 +72,11 @@ buyNow(prod:any)
     let exit = this.setToCart.find(id => id.item.id == prod.id)
     if(exit)
     {
-      alert('Already Selected')
+      Swal.fire(
+        'You Already Selected!',
+        'Check out the Shopping Cart',
+        'success'
+      )
       this.router.navigate(['/cart'])
     }else
     {

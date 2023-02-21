@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TooltipPosition } from '@angular/material/tooltip';
+import Swal from 'sweetalert2';
 import { Table } from '../../interface/table';
 
 @Component({
@@ -46,14 +47,19 @@ export class CartComponent implements OnInit {
 
   changeCart() {
     this.getTotalPrice()
-
     localStorage.setItem('__cart', JSON.stringify(this.dataCart))
   }
 
 
-
   delete(index: number) {
     this.dataCart.splice(index, 1)
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Deleted',
+      showConfirmButton: false,
+      timer: 1500
+    })
     this.getTotalPrice()
     localStorage.setItem('__cart', JSON.stringify(this.dataCart))
 
