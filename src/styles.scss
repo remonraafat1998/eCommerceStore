@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --mainColor: #444B54;
+  --secondColor: #df5b03;
+  --secondHover: #b34700;
+
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Rubik', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--mainColor);
+}
+
+li {
+  list-style: none;
+}
+
+.head-mobile {
+  display: block;
+}
+
+.head-screen {
+  display: none;
+}
+
+// flex  actions
+.d-flex-center
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// animation actions
+
+.ani-main
+{
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+
+
+// Media Qeury
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .head-mobile
+{
+  display: none;
+}
+.head-screen
+{
+  display: block;
+}
+}
+

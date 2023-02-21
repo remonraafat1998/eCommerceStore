@@ -1,0 +1,32 @@
+<div class="card-box ani-main">
+  <!-- function buttons -->
+  <div class="func-btns ani-main">
+    <!-- wish icon -->
+    <div class="wish-icon d-flex-center">
+      <mat-icon class="material-symbols-outlined" mat-raised-button matTooltip="add To Wish List"
+        [matTooltipPosition]="position.value!" aria-label="wish">favorite</mat-icon>
+    </div>
+    <!-- add to Cart -->
+    <div class="add-cart d-flex-center" (click)="addTo()">
+      <mat-icon class="material-symbols-outlined" mat-raised-button matTooltip="add To Cart"
+        [matTooltipPosition]="position.value!" aria-label="shopping-cart">store</mat-icon>
+    </div>
+  </div>
+  <!-- image card -->
+  <div class="img-card" routerLink="product/{{data.id}}">
+    <img src="{{data.image}}" alt="{{data.title}}" class="ani-main" alt="{{data.title}}">
+  </div>
+  <!-- title -->
+  <div class="title text-center" routerLink="product/{{data.id}}">
+    <p>{{data.title}}</p>
+  </div>
+  <!-- price -->
+  <div class="price d-flex text-center">
+    <span class="current">
+      <h3>{{data.price | currency}}</h3>
+    </span>
+    <span class="sale">
+      <h5>{{(data.price - randomNum) | currency}}</h5>
+    </span>
+  </div>
+</div>

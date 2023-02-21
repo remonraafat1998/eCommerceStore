@@ -1,0 +1,59 @@
+<section class="cart">
+  <div class="container">
+    <div class="head-cart">
+      <h1>Shopping Cart</h1>
+    </div>
+    <!-- box cart -->
+    <div class="boxcart">
+      <table class="table">
+        <thead>
+          <tr class="head-table">
+            <th scope="col">#</th>
+            <th scope="col">Image</th>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Total</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cart of dataCart;let index = index">
+            <th scope="row">{{index+1}}</th>
+            <td>
+              <div class="image-product">
+                <img src="{{cart.item.image}}" alt="{{cart.item.title}}">
+              </div>
+            </td>
+            <td>{{cart.item.title}}</td>
+            <td>{{cart.item.price | currency}}</td>
+            <td class="quantArea">
+
+              <button [disabled]="cart.quantity <= 1" (click)="minus(index)" style="background: #d9534f;"
+                mat-raised-button matTooltip="minus" [matTooltipPosition]="position.value!"
+                aria-label="Button that displays a tooltip in various positions"><mat-icon aria-hidden="false"
+                  aria-label="minus" fontIcon="remove"></mat-icon>
+
+              </button>
+              <input type="number" min="1" max="100" [(ngModel)]="cart.quantity" (change)="changeCart()" disabled>
+              <button [disabled]="cart.quantity == 100" (click)="plus(index)" style="background: #666;"
+                mat-raised-button matTooltip="plus" [matTooltipPosition]="position.value!"
+                aria-label="Button that displays a tooltip in various positions"><mat-icon aria-hidden="false"
+                  aria-label="plus" fontIcon="add"></mat-icon>
+              </button>
+
+            </td>
+
+            <td>{{(cart.quantity * cart.item.price) | currency}}</td>
+            <td><button class="btn btn-danger" (click)="delete(index)">Delete</button></td>
+          </tr>
+          <tr style="display: flex; justify-content: flex-end;">
+            <td>{{total | currency}}</td>
+          </tr>
+
+          <button (click)="sendCart()">Order Now</button>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

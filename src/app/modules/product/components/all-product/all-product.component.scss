@@ -1,0 +1,22 @@
+.setBox
+{
+  position: relative;
+  .addWish
+{
+  position: absolute;
+  bottom: 7px;
+  left: 30%;
+  border: none;
+  outline: none;
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+}
+

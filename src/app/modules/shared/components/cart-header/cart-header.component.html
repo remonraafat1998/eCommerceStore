@@ -1,0 +1,14 @@
+<table class="table">
+  <tbody>
+    <tr *ngFor="let cart of cartInf;let index = index">
+      <td class="cart-image"><img src="{{cart.item.image}}" alt="{{cart.item.title}}"></td>
+      <td>{{cart.item.title}}</td>
+      <td>{{cart.quantity}}</td>
+      <td>{{cart.item.price | currency}}</td>
+      <td><button class="btn btn-danger" title="Delete" (click)="deleteOnOfCart(index)">x</button></td>
+    </tr>
+  </tbody>
+</table>
+<div class="total">
+<p> Total : {{total| currency}}</p>
+</div>

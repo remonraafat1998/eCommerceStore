@@ -1,0 +1,116 @@
+<nav class="nav-head">
+  <!-- Top -->
+  <div class="top-nav-cont">
+    <div class="container">
+      <div class="top-nav">
+        <!-- left Links -->
+        <div class="left">
+          <ul>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">featured products</a></li>
+            <li><a href="#">wighList</a></li>
+          </ul>
+        </div>
+        <!-- Right -->
+        <div class="right">
+          <ul>
+            <li><a href="#">sign up</a></li>
+            <li><a href="#">my account</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- center nav -->
+  <div class="center-nav">
+    <div class="container">
+      <div class="nav-container">
+        <!-- left center nav -->
+        <div class="left-center">
+          <!-- toggle nav -->
+          <div class="toggle-nav-btn head-screen">
+            <button mat-icon-button aria-label="toggle-nav">
+              <mat-icon>notes</mat-icon>
+            </button>
+          </div>
+          <a href="#" class="brand"><img src="../../../../../assets/img/logo.png" width="100px" height="55px"
+              alt=""></a>
+          <!-- nav list -->
+          <div class="nav-list head-mobile">
+            <ul class="ul-list">
+              <li><a href="#">home</a></li>
+              <li><a href="#">shop</a></li>
+              <li><a href="#">women <span class="arrow down"></span></a></li>
+              <li><a href="#">men</a></li>
+              <li><a href="#">
+                  <div matBadge="new" matBadgeOverlap="false" class="demo-section">sport</div>
+                </a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- right center nav -->
+        <div class="right-center d-flex">
+          <div class="favorit">
+            <a href="#">
+              <div class="demo-section">
+                <mat-icon matBadge="0" matBadgeColor="warn" mat-raised-button matTooltip="WishList"
+                  aria-label="favorit button">favorite</mat-icon>
+                <!-- Include text description of the icon's meaning for screen-readers -->
+                <span class="cdk-visually-hidden">
+                  favorit
+                </span>
+              </div>
+            </a>
+          </div>
+          <!-- cart -->
+          <div class="cart-area">
+            <a href="#">
+              <div class="icon-cart" style="display: flex">
+                <div class="demo-section">
+                  <mat-icon matBadge="{{lengthCart}}" matBadgeColor="warn">storefront</mat-icon>
+                  <!-- Include text description of the icon's meaning for screen-readers -->
+                  <span class="cdk-visually-hidden">
+                    storefront
+                  </span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Down Slider -->
+            <div class="down-slide">
+              <div class="content">
+                <div class="cart-information">
+                  <app-cart-header></app-cart-header>
+                </div>
+                <div class="router-cart">
+                  <button class="ani-main" routerLink="cart">view cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end nav -->
+  <div class="end-nav">
+    <div class="container">
+      <div class="end-cont">
+        <div class="depart text-center">
+          <span>all departments</span>
+        </div>
+        <div class="search">
+          <span class="icon-search"><mat-icon aria-hidden="false" aria-label="search"
+              fontIcon="search"></mat-icon></span>
+          <form>
+            <input type="search" placeholder="Search Product...">
+          </form>
+          <button class="search-btn">Search</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
