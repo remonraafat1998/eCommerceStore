@@ -120,15 +120,16 @@
               position: relative;
               width: 100%;
               height: 100%;
-             .cart-information
-             {
-              position: relative;
-              overflow-y: scroll;
-              ;
-              width: 100%;
-              height: 80%;
-              background-color: #fff
-             }
+
+              .cart-information {
+                position: relative;
+                overflow-y: scroll;
+                ;
+                width: 100%;
+                height: 80%;
+                background-color: #fff
+              }
+
               .router-cart {
                 position: absolute;
                 width: 100%;

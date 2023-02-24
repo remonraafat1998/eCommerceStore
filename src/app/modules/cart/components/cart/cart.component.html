@@ -5,6 +5,7 @@
     </div>
     <!-- box cart -->
     <div class="boxcart">
+      <!-- table -->
       <table class="table">
         <thead>
           <tr class="head-table">
@@ -17,7 +18,7 @@
             <th scope="col">Delete</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="!loading">
           <tr *ngFor="let cart of dataCart;let index = index">
             <th scope="row">{{index+1}}</th>
             <td>
@@ -45,15 +46,40 @@
             </td>
 
             <td>{{(cart.quantity * cart.item.price) | currency}}</td>
-            <td><button class="btn btn-danger" (click)="delete(index)">Delete</button></td>
+            <td><button class="btn btn-danger" (click)="delete(index)">
+                <span *ngIf="!deleteLoading">Delete</span>
+                <span *ngIf="deleteLoading"><app-load-action></app-load-action></span>
+              </button></td>
           </tr>
-          <tr style="display: flex; justify-content: flex-end;">
-            <td>{{total | currency}}</td>
-          </tr>
-
-          <button (click)="sendCart()">Order Now</button>
         </tbody>
       </table>
+
+      <!-- total area -->
+      <div class="total-area w-100 ct-xs">
+        <div class="total-box">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>total :</td>
+                <td>{{total | currency}}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="orderBtn"><button>
+                    <span *ngIf="!sendCartLoad" (click)="sendCart()">Order Now</span>
+                    <span *ngIf="sendCartLoad"><app-load-action></app-load-action></span>
+                  </button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="loading d-flex-center">
+  <div class="container">
+    <app-loading *ngIf="loading"></app-loading>
+  </div>
+</div>

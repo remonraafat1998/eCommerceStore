@@ -1,16 +1,18 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackbarComponent } from 'src/app/modules/shared/components/snackbar/snackbar.component';
 import { GetService } from 'src/app/modules/shared/services/get.service';
 import Swal from 'sweetalert2';
+import { Cart } from '../../interfaces/cart';
+import { Product } from '../../interfaces/product';
 @Component({
   selector: 'app-all-product',
   templateUrl: './all-product.component.html',
   styleUrls: ['./all-product.component.scss']
 })
 export class AllProductComponent implements OnInit {
-  getProduct: any[] = []
-  SetToCart: any[] = []
+  getProduct: Product[] = []
+  SetToCart: Cart[] = []
   loading: boolean = false;
   constructor(public snackBar: MatSnackBar, private getServices: GetService) { }
   ngOnInit(): void {
@@ -34,7 +36,7 @@ export class AllProductComponent implements OnInit {
         Swal.fire(
           'You Already Selected!',
           'Continue Shopping',
-          'success'
+          'info'
         )
       } else {
         this.SetToCart.push(event);
@@ -49,3 +51,4 @@ export class AllProductComponent implements OnInit {
     }
   }
 }
+

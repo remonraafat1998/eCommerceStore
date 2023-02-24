@@ -20,7 +20,8 @@ const materialModules =[
     CommonModule,
     CartRoutingModule,
     FormsModule,
-    materialModules
+    materialModules,
+    SharedModule
   ],
   exports: [CartComponent]
 })

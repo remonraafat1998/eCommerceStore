@@ -12,6 +12,8 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 import { CartHeaderComponent } from './components/cart-header/cart-header.component';
+import { LoadActionComponent } from './components/load-action/load-action.component';
+import { StartRatingComponent } from './components/start-rating/start-rating.component';
 const materialModules = [
   MatButtonModule,
   MatDividerModule,
@@ -27,7 +29,9 @@ const materialModules = [
     SnackbarComponent,
     HeaderComponent,
     FooterComponent,
-    CartHeaderComponent
+    CartHeaderComponent,
+    LoadActionComponent,
+    StartRatingComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +43,9 @@ const materialModules = [
     SnackbarComponent,
     HeaderComponent,
     FooterComponent,
-    materialModules
+    materialModules,
+    LoadActionComponent,
+    StartRatingComponent
    ]
 })
 export class SharedModule { }

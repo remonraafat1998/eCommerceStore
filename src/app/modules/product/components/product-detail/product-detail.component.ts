@@ -2,6 +2,8 @@ import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GetService } from 'src/app/modules/shared/services/get.service';
 import Swal from 'sweetalert2';
+import { Cart } from '../../interfaces/cart';
+import { Product } from '../../interfaces/product';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,9 +12,10 @@ import Swal from 'sweetalert2';
 })
 export class ProductDetailComponent implements OnInit {
   idProd?:any;
-  product:any = []
-  setToCart:any[] = []
+  product:any;
+  setToCart:Cart[] = []
   loading:boolean = false
+  actionLoading:boolean = false
 constructor(private activatedR:ActivatedRoute,private apiServ:GetService,private router: Router){
   this.idProd = this.activatedR.snapshot.paramMap.get('id')
 }
@@ -30,9 +33,10 @@ getProduct()
   })
 }
 
-
+// add To Cart Function
 addToCart(prod:any)
 {
+  this.actionLoading = true
   if('__cart' in localStorage)
   {
     this.setToCart = JSON.parse(localStorage.getItem('__cart')!)
@@ -42,7 +46,7 @@ addToCart(prod:any)
       Swal.fire(
         'You Already Selected!',
         'Continue Shopping',
-        'success'
+        'info'
       )
     }else
     {
@@ -52,6 +56,11 @@ addToCart(prod:any)
         wishList:false
       });
       localStorage.setItem('__cart',JSON.stringify(this.setToCart))
+      Swal.fire(
+        'Done',
+        'Continue Shopping',
+        'success'
+      )
     }
   }else
   {
@@ -61,11 +70,19 @@ addToCart(prod:any)
       wishList:false
     });
     localStorage.setItem('__cart',JSON.stringify(this.setToCart))
+    Swal.fire(
+      'Done',
+      'Continue Shopping',
+      'success'
+    )
   }
+  this.actionLoading = false
 }
 
+// Buy Now  And Go To Cart Route Directly
 buyNow(prod:any)
 {
+  this.actionLoading = true
   if('__cart' in localStorage)
   {
     this.setToCart = JSON.parse(localStorage.getItem('__cart')!)
@@ -99,5 +116,6 @@ buyNow(prod:any)
     this.router.navigate(['/cart'])
 
   }
+  this.actionLoading = false
 }
 }

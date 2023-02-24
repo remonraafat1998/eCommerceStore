@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cart } from '../../interfaces/cart';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  getCart: any[] = []
+  getCart: Cart[] = []
   lengthCart: number = 0
   total: number =0
-  constructor() { }
+  constructor(private router:Router) { }
   ngOnInit(): void {
     this.unvisableHead();
     this.getcart();
@@ -35,4 +37,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  // router Cart
+  routerCart(){
+    this.router.navigate(['cart'])
+  }
 }

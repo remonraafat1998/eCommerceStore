@@ -1,12 +1,10 @@
-<div class="product-detail"  *ngIf="!loading">
+<div class="product-detail" *ngIf="!loading">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6" >
+      <div class="col-lg-6">
         <div class="image-product">
           <figure>
-            <img
-              src="{{product.image}}"
-              alt="{{product.title}}">
+            <img src="{{product.image}}" alt="{{product.title}}">
             <figcaption>{{product.title}}</figcaption>
           </figure>
         </div>
@@ -19,10 +17,7 @@
           </div>
           <!-- reting  -->
           <div class="rating pt-3 pb-3">
-           <div class="start w-50 rating-star">
-
-
-           </div>
+            <app-start-rating></app-start-rating>
           </div>
           <!-- price -->
           <div class="price pt-3 pb-3">
@@ -39,8 +34,16 @@
 
           <!-- add and buy button -->
           <div class="Interactive-btn">
-            <button id="add" class="ani-main" (click)=" addToCart(product)">add to cart</button>
-            <button id="buy" class="ani-main" (click)="buyNow(product)">buy now</button>
+            <button id="add" class="ani-main" (click)=" addToCart(product)">
+              <span *ngIf="!actionLoading">add to cart</span>
+              <span *ngIf="actionLoading">
+                <app-load-action></app-load-action>
+              </span>
+            </button>
+            <button id="buy" class="ani-main" (click)="buyNow(product)">
+              <span *ngIf="!actionLoading">buy now</span>
+              <span *ngIf="actionLoading"><app-load-action></app-load-action></span>
+            </button>
           </div>
         </div>
       </div>
@@ -52,15 +55,7 @@
     </div>
   </div>
 </div>
-
-<!-- RELATED PRODUCTS -->
-<!-- <div class="swiper-products">
-  <div class="container">
-    <app-swiper></app-swiper>
-  </div>
-</div> -->
-
-<div class="loading" >
+<div class="loading">
   <div class="container">
     <app-loading *ngIf="loading"></app-loading>
   </div>

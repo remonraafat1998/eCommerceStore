@@ -1,5 +1,4 @@
-.loading
-{
+.loading {
   margin-top: 220px;
 }
 
@@ -20,10 +19,9 @@
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
-    figure
-    {
-      img
-      {
+
+    figure {
+      img {
         position: absolute;
         width: 100%;
         height: 100%;
@@ -37,14 +35,14 @@
 
   .product-information {
     padding: 0 20px;
-    >div{
+
+    >div {
       margin: 18px 0;
       text-transform: capitalize;
     }
-    .title
-    {
-      h3
-      {
+
+    .title {
+      h3 {
         font-size: 18px;
         font-weight: 600;
 
@@ -57,23 +55,24 @@
       line-height: 24px;
       font-weight: 700;
     }
+
     .information {
       font-size: 14px;
       color: #666;
-      ul li
-      {
+
+      ul li {
         margin: 16px 0;
-        span
-        {
+
+        span {
           margin-right: 18px;
         }
       }
     }
-    .Interactive-btn
-    {
+
+    .Interactive-btn {
       display: flex;
-       button
-       {
+
+      button {
         padding: 12px;
         text-align: center;
         font-size: 14px;
@@ -89,37 +88,36 @@
         width: 150px;
         color: #fff;
         margin: 0 6px;
-        &#buy
-        {
+
+        &#buy {
           background: var(--secondColor);
-          &:hover
-          {
+
+          &:hover {
             background: var(--secondHover);
           }
         }
-        &#add
-        {
+
+        &#add {
           background: #3e3e3e;
-          &:hover
-          {
-          background: #313131;
+
+          &:hover {
+            background: #313131;
           }
         }
-}
+      }
     }
   }
 
 
-  .des
-  {
+  .des {
     padding: 10px 0;
-    h4
-    {
+
+    h4 {
       color: #333;
       font-weight: 600;
     }
-    p
-    {
+
+    p {
       background: #eee;
       font-size: 16px;
       color: #333;
@@ -129,6 +127,3 @@
     }
   }
 }
-
-
-

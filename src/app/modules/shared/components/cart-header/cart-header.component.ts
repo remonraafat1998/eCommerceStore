@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Cart } from '../../interfaces/cart';
 
 @Component({
   selector: 'app-cart-header',
@@ -6,16 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-header.component.scss']
 })
 export class CartHeaderComponent implements OnInit {
-  cartInf: any[] = []
+  cartInf: Cart[] = []
   notInformationsCart: boolean = false
   loading: boolean = false
-  total: any;
+  total?: number;
   constructor() { }
+
+
   ngOnInit(): void {
     this.getCart();
     this.getTotalPrice()
   }
 
+
+  //  Get Cart Informations
   getCart() {
     if ('__cart' in localStorage) {
       this.notInformationsCart = false
