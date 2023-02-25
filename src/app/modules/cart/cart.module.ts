@@ -21,7 +21,7 @@ const materialModules =[
     CartRoutingModule,
     FormsModule,
     materialModules,
-    SharedModule
+    SharedModule,
   ],
   exports: [CartComponent]
 })

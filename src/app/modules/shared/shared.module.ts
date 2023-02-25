@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CartHeaderComponent } from './components/cart-header/cart-header.component';
 import { LoadActionComponent } from './components/load-action/load-action.component';
 import { StartRatingComponent } from './components/start-rating/start-rating.component';
+import { SwiperComponent } from './components/swiper/swiper.component';
+import {SwiperModule} from 'swiper/angular'
+import { ProductModule } from '../product/product.module';
 const materialModules = [
   MatButtonModule,
   MatDividerModule,
@@ -26,30 +29,32 @@ const materialModules = [
 ]
 
 @NgModule({
-  declarations: [
-    LoadingComponent,
-    SnackbarComponent,
-    HeaderComponent,
-    FooterComponent,
-    CartHeaderComponent,
-    LoadActionComponent,
-    StartRatingComponent,
-
-  ],
-  imports: [
-    CommonModule,
-    materialModules,
-    HttpClientModule,
-  ],
-  exports :[
-    LoadingComponent,
-    SnackbarComponent,
-    HeaderComponent,
-    FooterComponent,
-    materialModules,
-    LoadActionComponent,
-    StartRatingComponent,
-
-   ]
+    declarations: [
+        LoadingComponent,
+        SnackbarComponent,
+        HeaderComponent,
+        FooterComponent,
+        CartHeaderComponent,
+        LoadActionComponent,
+        StartRatingComponent,
+        SwiperComponent,
+    ],
+    exports: [
+        LoadingComponent,
+        SnackbarComponent,
+        HeaderComponent,
+        FooterComponent,
+        materialModules,
+        LoadActionComponent,
+        StartRatingComponent,
+        SwiperComponent,
+        SwiperModule
+    ],
+    imports: [
+        CommonModule,
+        materialModules,
+        HttpClientModule,
+        SwiperModule,
+    ]
 })
 export class SharedModule { }

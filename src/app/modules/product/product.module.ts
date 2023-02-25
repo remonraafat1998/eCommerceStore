@@ -29,6 +29,7 @@ const materialModules = [
   exports: [
   AllProductComponent,
     materialModules,
+    SingleProductComponent
   ]
 })
 export class ProductModule { }

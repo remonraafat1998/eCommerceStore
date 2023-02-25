@@ -1,0 +1,22 @@
+<div class="swiper">
+
+  <swiper
+  [slidesPerView]="4"
+  [spaceBetween]="20"
+  [navigation]="true"
+  [pagination]="{ clickable: true }"
+  [scrollbar]="{ draggable: true }"
+>
+  <ng-template swiperSlide *ngFor="let product of getAllProduct">
+    <div class="card-box" >
+      <a href="#">
+       <div class="image ani-main">
+         <img src="{{product.image}}" alt="{{product.title}}">
+       </div>
+      </a>
+       </div>
+  </ng-template>
+
+</swiper>
+
+</div>

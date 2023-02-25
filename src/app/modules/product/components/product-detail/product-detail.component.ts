@@ -16,6 +16,7 @@ export class ProductDetailComponent implements OnInit {
   setToCart:Cart[] = []
   loading:boolean = false
   actionLoading:boolean = false
+  categoryNow:any
 constructor(private activatedR:ActivatedRoute,private apiServ:GetService,private router: Router){
   this.idProd = this.activatedR.snapshot.paramMap.get('id')
 }
@@ -26,6 +27,7 @@ this.getProduct();
 // getProduct Details
 getProduct()
 {
+
   this.loading = true
   this.apiServ.getDetailProduct(this.idProd).subscribe((data:any)=>{
     this.product = data

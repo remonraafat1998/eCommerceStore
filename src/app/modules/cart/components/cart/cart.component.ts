@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TooltipPosition } from '@angular/material/tooltip';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Table } from '../../interface/table';
 
@@ -22,11 +23,11 @@ export class CartComponent implements OnInit {
   position = new FormControl(this.positionOptions[1]);
 
 
-  constructor(public snackBar: MatSnackBar) { }
+  constructor(public snackBar: MatSnackBar, private router:Router) { }
 
   ngOnInit(): void {
      this.getData();
-     this.getTotalPrice()
+     this.getTotalPrice();
     }
 
   // get Data Of Cart From LocalStorage
@@ -108,6 +109,15 @@ export class CartComponent implements OnInit {
     }
     console.log(modal)
     this.sendCartLoad = false
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Done',
+      showConfirmButton: false,
+      timer: 1500
+    }).then(()=> {
+      this.router.navigate([''])
+    })
   }
 
 
