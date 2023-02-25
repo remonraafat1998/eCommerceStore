@@ -13,11 +13,34 @@ import { Product } from '../../interfaces/product';
 export class AllProductComponent implements OnInit {
   getProduct: Product[] = []
   SetToCart: Cart[] = []
+  getCategory: any[] = []
   loading: boolean = false;
   constructor(public snackBar: MatSnackBar, private getServices: GetService) { }
   ngOnInit(): void {
     this.GetProductsInformations();
+    this.getAllCategory();
   }
+  // get All Category
+  getAllCategory() {
+    this.loading = true
+    this.getServices.getAllCategory().subscribe((data: any) => {
+      this.getCategory = data
+      this.loading = false
+    })
+  }
+  // get Specific Product
+  getproductByCategory(categ:any) {
+    this.loading = true
+    this.getServices.getSpeseficCategory(categ).subscribe((res: any) => {
+      this.getProduct = res
+      this.loading = false
+    })
+  }
+  filterCategory($event:any) {
+    let data = $event.value;
+   (data == 'all')? this.GetProductsInformations() : this.getproductByCategory(data)
+  }
+
   // getAllProduct
   GetProductsInformations() {
     this.loading = true

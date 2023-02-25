@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 import { CartHeaderComponent } from './components/cart-header/cart-header.component';
@@ -20,7 +21,8 @@ const materialModules = [
   MatIconModule,
   MatBadgeModule,
   MatTooltipModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatSelectModule
 ]
 
 @NgModule({
@@ -31,7 +33,8 @@ const materialModules = [
     FooterComponent,
     CartHeaderComponent,
     LoadActionComponent,
-    StartRatingComponent
+    StartRatingComponent,
+
   ],
   imports: [
     CommonModule,
@@ -45,7 +48,8 @@ const materialModules = [
     FooterComponent,
     materialModules,
     LoadActionComponent,
-    StartRatingComponent
+    StartRatingComponent,
+
    ]
 })
 export class SharedModule { }

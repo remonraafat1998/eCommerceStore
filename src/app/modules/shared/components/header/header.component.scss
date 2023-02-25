@@ -12,6 +12,7 @@
 
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
 
       li {
         display: inline-block;
@@ -76,6 +77,33 @@
             }
           }
         }
+
+        .nav-mobile {
+          .nav-list-mobile {
+            ul {
+              display: flex;
+              flex-direction: column;
+               li
+               {
+                margin: 20px 0;
+                a
+                {
+                  width: 100%;
+                  padding: 14px 10px;
+                  background-color: #ddd;
+                  font-size: 24px;
+                  font-weight: 600;
+                  text-transform: capitalize;
+                  &:hover
+                  {
+                    color: #333;
+                  }
+                }
+               }
+            }
+          }
+        }
+
       }
 
       // right center

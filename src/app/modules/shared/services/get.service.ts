@@ -8,7 +8,18 @@ import { environment } from 'src/environments/environment';
 export class GetService {
 
   constructor(private httpC:HttpClient) { }
+  // get  Category
+  getAllCategory()
+  {
+    return this.httpC.get(environment.domainApi+'products/categories')
+  }
+  // get One Category
+  getSpeseficCategory(name:string)
+  {
+    return this.httpC.get(environment.domainApi+'products/category/'+name)
+  }
 
+  // get Product
   getProduct()
   {
     return this.httpC.get(environment.domainApi+'products')

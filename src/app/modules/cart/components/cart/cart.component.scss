@@ -29,11 +29,11 @@
   .boxcart {
     position: relative;
     width: 100%;
-
+    overflow: scroll;
     // table cart
     table {
       width: 100%;
-
+      overflow: scroll;
       .head-table {
         background: #eaeaea;
         color: #666;
@@ -148,5 +148,5 @@
 // loading
 .loading {
   width: 100%;
-  height: 100%;
+
 }

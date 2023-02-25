@@ -30,7 +30,8 @@
         <div class="left-center">
           <!-- toggle nav -->
           <div class="toggle-nav-btn head-screen">
-            <button mat-icon-button aria-label="toggle-nav">
+            <button mat-icon-button aria-label="toggle-nav" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+            aria-controls="offcanvasScrolling">
               <mat-icon>notes</mat-icon>
             </button>
           </div>
@@ -48,7 +49,30 @@
                 </a></li>
             </ul>
           </div>
+
+          <!-- nav list in mobile -->
+           <div class="nav-mobile">
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+            id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+           <!-- nav list -->
+           <div class="nav-list-mobile">
+            <ul class="ul-list">
+              <li><a href="#">home</a></li>
+              <li><a href="#">shop</a></li>
+              <li><a href="#">women <span class="arrow down"></span></a></li>
+              <li><a href="#">men</a></li>
+              <li><a href="#">sport</a></li>
+            </ul>
+          </div>
+            </div>
+          </div>
+           </div>
         </div>
+
         <!-- right center nav -->
         <div class="right-center d-flex">
           <div class="favorit">
