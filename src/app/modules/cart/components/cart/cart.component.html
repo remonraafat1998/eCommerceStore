@@ -65,10 +65,12 @@
               </tr>
               <tr>
                 <td></td>
-                <td class="orderBtn"><button>
+                <td class="orderBtn">
+                  <button class="btn-order">
                     <span *ngIf="!sendCartLoad" (click)="sendCart()">Order Now</span>
                     <span *ngIf="sendCartLoad"><app-load-action></app-load-action></span>
-                  </button></td>
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>

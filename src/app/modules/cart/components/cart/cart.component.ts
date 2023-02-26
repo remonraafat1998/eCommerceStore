@@ -107,7 +107,6 @@ export class CartComponent implements OnInit {
       date: new Date(),
       products: prod
     }
-    console.log(modal)
     this.sendCartLoad = false
     Swal.fire({
       position: 'center',
